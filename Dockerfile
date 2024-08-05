@@ -1,8 +1,8 @@
-FROM docker.io/golang:1.21-alpine3.20
+FROM docker.io/golang:1.21-alpine
 
 WORKDIR /app
 
-COPY ./go-app /app/main
-RUN chmod +x /app/main
+COPY ./go-app /app/go-app
+RUN chmod +x /app/go-app
 
-ENTRYPOINT ["./main"]
+ENTRYPOINT ["/app/go-app"]
